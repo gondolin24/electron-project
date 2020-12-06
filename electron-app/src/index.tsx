@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route } from "react-router-dom";
+import Profile from "./TestPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <div className="App">
+              <Route path="/" exact component={App} />
+              <Route path="/Profile" exact component={Profile} />
+          </div>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

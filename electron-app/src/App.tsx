@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Canvas from "./components/Canvas";
+import TagSelector from "./components/TagSelector";
+import {Button, createStyles, makeStyles, Theme} from "@material-ui/core";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        appContainer:{
+            marginLeft: '5em',
+            marginRight: '5em'
+        },
+        buttonContainer: {
+            display: 'flex',
+            alignItems: 'row',
+            justifyContent: 'space-around'
+        },
+        container: {
+            display: 'flex',
+            alignItems: 'row',
+            justifyContent: 'space-between'
+        },
+        columnContainer: {
+            display: 'flex',
+            alignItems: 'column'}
+    })
+);
 
+
+const App: React.FC = () => {
+    const classes = useStyles()
+
+    return (
+        <div className={classes.appContainer}>
+            <h1>Home page</h1>
+            <div className={classes.container}>
+                <Canvas/>
+                <TagSelector/>
+            </div>
+
+            <div className={classes.buttonContainer}>
+                <Button>back</Button>
+
+                <Button>next</Button>
+
+                <Button>submit</Button>
+            </div>
+
+
+
+        </div>
+    );
+};
 export default App;
+
+
