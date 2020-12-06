@@ -1,5 +1,6 @@
 # Default ignored files
 /workspace.xml
 /node_modules
-/nathaniel-project/node_modules/
-/nathaniel-project/.idea
+.idea
+/.idea
+/.idea/
